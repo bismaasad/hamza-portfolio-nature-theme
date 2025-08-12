@@ -1,82 +1,70 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-const links = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "gallery", label: "Gallery" },
-  { id: "portfolio", label: "Portfolio" },
-  { id: "contact", label: "Contact" },
-];
+const Navbar = ({ active, onNavigate }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("home");
-
-  const handleNavClick = (id) => {
-    setActive(id);
-    setOpen(false);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "education", label: "Education" },
+    { id: "experience", label: "Experience" },
+    { id: "publications", label: "Publications" },
+    { id: "contact", label: "Contact" },
+  ];
 
   return (
-    <nav className="bg-mountain text-white sticky top-0 z-40 shadow">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <div className="text-lg font-bold">Dr. Hamza Khan</div>
-            <div className="hidden md:block ml-10">
-              <ul className="flex space-x-6">
-                {links.map((l) => (
-                  <li key={l.id}>
-                    <button
-                      onClick={() => handleNavClick(l.id)}
-                      className={`px-1 py-2 text-sm focus:outline-none ${
-                        active === l.id ? "border-b-2 border-sunrise" : "opacity-90 hover:opacity-100"
-                      }`}
-                    >
-                      {l.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+    <nav className="bg-mountain text-white px-4 py-5 shadow-md fixed w-full z-50">
+      <div className="max-w-6xl mx-auto flex justify-between items-center">
+        {/* Heading with responsive left padding */}
+        <h1 className="text-xl font-bold pl-4 md:pl-8 lg:pl-0">
+          Dr. Hamza Khan
+        </h1>
 
-          <div className="md:hidden">
-            <button
-              onClick={() => setOpen(!open)}
-              aria-label="Toggle menu"
-              className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sunrise"
-            >
-              {open ? (
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-mountain/95">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {links.map((l) => (
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-6 text-sm">
+          {navItems.map((item) => (
+            <li key={item.id}>
               <button
-                key={l.id}
-                onClick={() => handleNavClick(l.id)}
-                className={`block w-full text-left px-3 py-2 rounded-md text-sm font-medium ${
-                  active === l.id ? "bg-sunrise/20" : "hover:bg-white/5"
+                onClick={() => onNavigate(item.id)}
+                className={`hover:text-sunrise transition duration-200 ${
+                  active === item.id ? "border-b-2 border-sunrise pb-1" : ""
                 }`}
               >
-                {l.label}
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile Hamburger Icon */}
+        <button
+          className="md:hidden focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Dropdown Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-mountain">
+          <div className="max-w-6xl mx-auto px-4 pt-4 pb-2 space-y-3">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => {
+                  onNavigate(item.id);
+                  setMenuOpen(false); // close menu on selection
+                }}
+                className={`block w-full text-left text-sm hover:text-sunrise transition duration-200 ${
+                  active === item.id
+                    ? "border-l-4 border-sunrise pl-4"
+                    : "pl-4"
+                }`}
+              >
+                {item.label}
               </button>
             ))}
           </div>
@@ -84,4 +72,6 @@ export default function Navbar() {
       )}
     </nav>
   );
-}
+};
+
+export default Navbar;

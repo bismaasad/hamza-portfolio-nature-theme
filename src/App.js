@@ -1,33 +1,50 @@
-// src/App.js
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Gallery from "./components/Gallery";
+import About from "./components/About";
+import Education from "./components/Education";
+import Experience from "./components/Experience";
+import Publications from "./components/Publications";
+import Contact from "./components/Contact";
+import NTU from "./components/NTU";
+
+// ✅ Import backend test component
+import TestBackend from "./components/TestBackend";
 
 function App() {
-  // prepare images array or keep default
-  const images = [
-    { thumb: "/images/image1.jpg", large: "/images/image1.jpg", alt: "1" },
-    { thumb: "/images/image2.jpg", large: "/images/image2.jpg", alt: "2" },
-    { thumb: "/images/image3.jpg", large: "/images/image3.jpg", alt: "3" },
-  ];
+  const [visibleSection, setVisibleSection] = useState("home");
+
+  const handleNavigation = (section) => {
+    setVisibleSection(section);
+    setTimeout(() => {
+      const el = document.getElementById(section);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
 
   return (
-    <div className="bg-stone text-gray-900 font-sans min-h-screen">
-      <Navbar />
-      <Hero />
-      {/* Example About section placeholder */}
-      <section id="about" className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-2">About</h2>
-        <p className="text-gray-700">Add your about text here. This section is responsive and will display nicely on mobile.</p>
-      </section>
+    <div className="font-sans bg-gray-50 text-gray-800 scroll-smooth">
+      <Navbar active={visibleSection} onNavigate={handleNavigation} />
+      <div className="pt-16">
+        {visibleSection === "home" && (
+          <>
+            <Hero />
+            <section id="gallery"><Gallery /></section>
+            <section id="ntu"><NTU /></section>
 
-      <Gallery images={images} />
-
-      <section id="contact" className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-4">Contact</h2>
-        <p className="text-gray-700">Contact details and form go here.</p>
-      </section>
+            {/* ✅ Show backend connection test below hero */}
+            <section className="my-8">
+              <TestBackend />
+            </section>
+          </>
+        )}
+        {visibleSection === "about" && <section id="about"><About /></section>}
+        {visibleSection === "education" && <section id="education"><Education /></section>}
+        {visibleSection === "experience" && <section id="experience"><Experience /></section>}
+        {visibleSection === "publications" && <section id="publications"><Publications /></section>}
+        {visibleSection === "contact" && <section id="contact"><Contact /></section>}
+      </div>
     </div>
   );
 }
