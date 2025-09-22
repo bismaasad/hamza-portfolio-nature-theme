@@ -24,8 +24,8 @@ const NTU = () => {
     "/images/NTU/WhatsApp Image 2025-07-18 at 08.35.02_9b79caf9.jpg",
     "/images/NTU/WhatsApp Image 2025-07-18 at 08.38.14_eeed3e11.jpg",
     "/images/NTU/WhatsApp Image 2025-07-18 at 08.43.01_12327ab2.jpg",
-
   ];
+
   const closeModal = () => setSelectedIndex(null);
   const showPrev = () => setSelectedIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
   const showNext = () => setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
@@ -58,8 +58,12 @@ const NTU = () => {
           <button onClick={showPrev} className="absolute left-5 text-white hover:text-blue-400">
             <ChevronLeft size={40} />
           </button>
-          <div className="bg-white rounded-xl p-4 max-w-[90vw] max-h-[90vh] shadow-2xl">
-            <img src={images[selectedIndex]} alt="NTU View" className="w-[800px] h-[500px] object-cover rounded-lg" />
+          <div className="bg-white rounded-xl p-4 max-w-[90vw] max-h-[90vh] shadow-2xl flex items-center justify-center">
+            <img
+              src={images[selectedIndex]}
+              alt="NTU View"
+              className="max-w-full max-h-[80vh] object-contain rounded-lg"
+            />
           </div>
           <button onClick={showNext} className="absolute right-5 text-white hover:text-blue-400">
             <ChevronRight size={40} />

@@ -8,6 +8,7 @@ import Experience from "./components/Experience";
 import Publications from "./components/Publications";
 import Contact from "./components/Contact";
 import NTU from "./components/NTU";
+import Footer from "./components/Footer";
 
 // ✅ Import backend test component
 import TestBackend from "./components/TestBackend";
@@ -24,9 +25,12 @@ function App() {
   };
 
   return (
-    <div className="font-sans bg-gray-50 text-gray-800 scroll-smooth">
+    <div className="font-sans bg-gray-50 text-gray-800 scroll-smooth flex flex-col min-h-screen">
+      {/* ✅ Navbar always on top */}
       <Navbar active={visibleSection} onNavigate={handleNavigation} />
-      <div className="pt-16">
+
+      {/* ✅ Main Content */}
+      <div className="pt-16 flex-grow">
         {visibleSection === "home" && (
           <>
             <Hero />
@@ -39,12 +43,30 @@ function App() {
             </section>
           </>
         )}
-        {visibleSection === "about" && <section id="about"><About /></section>}
-        {visibleSection === "education" && <section id="education"><Education /></section>}
-        {visibleSection === "experience" && <section id="experience"><Experience /></section>}
-        {visibleSection === "publications" && <section id="publications"><Publications /></section>}
-        {visibleSection === "contact" && <section id="contact"><Contact /></section>}
+
+        {visibleSection === "about" && (
+          <section id="about"><About /></section>
+        )}
+
+        {visibleSection === "education" && (
+          <section id="education"><Education /></section>
+        )}
+
+        {visibleSection === "experience" && (
+          <section id="experience"><Experience /></section>
+        )}
+
+        {visibleSection === "publications" && (
+          <section id="publications"><Publications /></section>
+        )}
+
+        {visibleSection === "contact" && (
+          <section id="contact"><Contact /></section>
+        )}
       </div>
+
+      {/* ✅ Footer always at bottom */}
+      <Footer />
     </div>
   );
 }

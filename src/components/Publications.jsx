@@ -6,19 +6,19 @@ const publications = [
     title: "Numerical Insights of Mixed Convection in a Square Cavity with an Insulated Vertical Strip",
     journal: "Fluid Dynamics",
     year: "2025",
-    doi: "",
+    doi: "https://link.springer.com/article/10.1134/S0015462825600853",
   },
   {
     title: "Nonlinear Dynamics of Violence Diffusion: The Fractional Derivative-Based Numerical",
     journal: "Chiang Mai Journal of Sciences",
     year: "2025",
-    doi: "",
+    doi: "https://epg.science.cmu.ac.th/ejournal/journal-detail.php?id=11952",
   },
   {
     title: "Towards Efficient Solutions: A Novel Approach to Quadratic Nonlinearity in Boundary Value Problems",
     journal: "Plos One",
-    year: "2024",
-    doi: "",
+    year: "2025",
+    doi: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317752",
   },
   {
     title: "Recycling orange waste for the sustainable dyeing of polyester fabric",
@@ -48,19 +48,19 @@ const publications = [
     title: "Application of the Robust Fixed Point Iteration Method in Control of the Level of Twin Tanks Liquid",
     journal: "Computation",
     year: "2020",
-    doi: "10.3390/computation8040096",
+    doi: "https://www.mdpi.com/2079-3197/8/4/96",
   },
   {
     title: "Fine Tuning of the Fixed Point Iteration-Based Matrix Inversion-Free Adaptive Inverse Kinematics Using Abstract Rotations",
     journal: "Punjab University Journal of Mathematics",
     year: "2020",
-    doi: "https://www.researchgate.net/publication/339901018_Fine_Tuning_of_the_Fixed_Point_Iteration-Based_Matrix_Inversion-Free_Adaptive_Inverse_Kinematics_Using_Abstract_Rotations",
+    doi: "https://pujm.pu.edu.pk/index.php/pujm/article/view/332",  
   },
   {
     title: "On the Implementation of Fixed Point Iteration based adaptive Receding Horizon Control for Multiple Degree of Freedom, Higher Order Dynamical System",
     journal: "Acta Polytechnica Hungarica",
     year: "2019",
-    doi: "10.12700/APH.16.9.2019.9.8",
+    doi: "https://acta.uni-obuda.hu/Khan_Tar_96.pdf",
   },
   {
     title: "Receding Horizon Control of Type 1 Diabetes Mellitus by Using Nonlinear Programming",
@@ -84,67 +84,67 @@ const publications = [
     title: "On The Alternatives of Lyapunov’s Direct Method in Adaptive Control Design",
     journal: "Robotics & Automation Engineering Journal (RAEJ)",
     year: "2018",
-    doi: "10.19080/RAEJ.2018.03.555623",
+    doi: "https://juniperpublishers.com/raej/pdf/RAEJ.MS.ID.555623.pdf",
   },
   {
     title: "Stochastic River Flow Modelling and Forecasting of Upper Indus Basin",
     journal: "Journal of Basic and Applied Sciences (JBAS)",
     year: "2015",
-    doi: "http://www.lifescienceglobal.com/pms/index.php/jbas/article/view/3501",
+    doi: "https://www.semanticscholar.org/paper/Stochastic-River-Flow-Modelling-and-Forecasting-of-Khan-Hassan/6fd0b1b91798c547b5873b5530a209829ad3154d",
   },
   {
     title: "Comparison of the Operation of Fixed Point Iteration-based Adaptive and Robust VS/SM-type Solutions for Controlling Two Coupled Fluid Tanks",
     journal: "20th IEEE International Symposium on Computational Intelligence and Informatics (CINTI)",
     year: "2020",
-    doi: "https://www.researchgate.net/publication/348367788_Comparison_of_the_Operation_of_Fixed_Point_Iteration-based_Adaptive_and_Robust_VSSM-type_Solutions_for_Controlling_Two_Coupled_Fluid_Tanks",
+    doi: "https://ieeexplore.ieee.org/document/9305827/",
   },
   {
     title: "Improved Simple Noise Filtering for Fixed Point Iteration-based Adaptive Controllers",
     journal: "20th IEEE International Symposium on Computational Intelligence and Informatics (CINTI)",
     year: "2020",
-    doi: "https://www.researchgate.net/publication/348366609_Improved_Simple_Noise_Filtering_for_Fixed_Point_Iteration-based_Adaptive_Controllers",
+    doi: "https://ieeexplore.ieee.org/document/9305840",
   },
   {
     title: "Fixed Point Transformation-based Adaptive Optimal Control Using Non-Linear Programming (NP)",
     journal: "IEEE SISY",
     year: "2017",
-    doi: "10.1109/NC.2017.8263279",
+    doi: "https://ieeexplore.ieee.org/document/8263279",
   },
   {
     title: "Fixed Point Iteration-based Problem Solution without the Calculation of the Jacobian",
     journal: "IEEE SAMI",
     year: "2019",
-    doi: "https://www.researchgate.net/publication/320750483_Fixed_point_transformation-based_adaptive_optimal_control_using_NLP",
+    doi: "https://ieeexplore.ieee.org/document/8782749",
   },
   {
     title: "Novel Contradiction Resolution in Fixed Point Transformation-based Adaptive Control",
     journal: "18th IEEE International Symposium on Computational Intelligence and Informatics (CINTI)",
     year: "2018",
-    doi: "10.1109/CINTI.2018.8928235",
+    doi: "https://ieeexplore.ieee.org/document/8928235",
   },
   {
     title: "Preliminary Investigation on the Possible Adaptive Control of an Inverted Pendulum-type Electric Cart",
     journal: "18th IEEE International Symposium on Computational Intelligence and Informatics (CINTI)",
     year: "2018",
-    doi: "10.1109/CINTI.2018.8928229",
+    doi: "https://ieeexplore.ieee.org/document/8928229",
   },
   {
     title: "Adaptive solution of the inverse kinematic task by fixed point transformation",
     journal: "IEEE SAMI",
     year: "2017",
-    doi: "10.1109/SAMI.2017.7880312",
+    doi: "https://ieeexplore.ieee.org/document/7880312",
   },
   {
     title: "On Replacing Lagrange’s Reduced Gradient Algorithm by Simplified Fixed Point Iteration in Adaptive Model Predictive Control",
     journal: "IEEE INES",
     year: "2019",
-    doi: "https://www.researchgate.net/publication/332726675_On_Replacing_Lagrange's_Reduced_Gradient_Algorithm_by_Simplified_Fixed_Point_Iteration_in_Adaptive_Model_Predictive_Control",
+    doi: "https://ieeexplore.ieee.org/document/9109504",
   },
   {
     title: "Suboptimal Adaptive Receding Horizon Control Using Simplified Nonlinear Programming",
     journal: "IEEE Xplore",
     year: "2021",
-    doi: "",
+    doi: "https://ieeexplore.ieee.org/document/9512918",
   },
 ];
 
@@ -162,7 +162,7 @@ const Publications = () => {
           <div className="mt-4 mx-auto w-32 h-1 rounded bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 shadow-md" />
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-8 mb-16">
           {publications.map((pub, index) => (
             <div
               key={index}

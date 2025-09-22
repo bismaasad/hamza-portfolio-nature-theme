@@ -20,8 +20,8 @@ const About = () => {
         <div className="space-y-8 text-gray-700 text-[1.1rem] leading-8">
           <p>
             <span className="font-semibold text-gray-900">Applied Mathematical Researcher</span> with expertise in
-            mathematical sciences, robotics control, and fixed point iterations. With several years of experience
-            teaching graduate and postgraduate students, Dr. Khan has contributed actively to global research
+            mathematical sciences, Adaptive Control Theory, Computational Fluid Dynamics, Fractional Modeling and  Data Analysis, with several years of experience
+            teaching graduate and postgraduate students. Dr. Hamza Khan has contributed actively to global research
             communities in <span className="text-blue-600">Pakistan</span>, <span className="text-blue-600">Hungary</span>, and other regions.
           </p>
           <p> His academic journey began in the <span className="text-blue-600">Phander valley of Ghizer, Gilgit,</span> where his passion for learning first took root. Through dedication and 
@@ -72,11 +72,11 @@ const About = () => {
               "Urdu",
               "Arabic (Basic)",
               "Shina",
-              "Kahwar",
+              "Khowar",
             ].map((lang) => (
               <div
                 key={lang}
-                className="bg-white border border-blue-100 hover:border-blue-300 text-blue-800 px-4 py-2 rounded-lg text-center font-medium shadow-sm transition duration-300"
+                className="bg-white border mb-16 border-blue-100 hover:border-blue-300 text-blue-800 px-4 py-2 rounded-lg text-center font-medium shadow-sm transition duration-300"
               >
                 {lang}
               </div>

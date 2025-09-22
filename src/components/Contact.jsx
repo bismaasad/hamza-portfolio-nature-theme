@@ -71,7 +71,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="mt-12 grid gap-6 md:grid-cols-2 text-gray-700">
+        <div className="mt-12 grid gap-6 mb-16 md:grid-cols-2 text-gray-700">
           <div className="bg-white rounded-xl shadow-md p-6 space-y-4">
             <h3 className="text-xl font-semibold text-emerald-700">
               Contact Information

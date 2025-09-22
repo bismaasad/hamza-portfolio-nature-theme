@@ -27,10 +27,8 @@ const Gallery = () => {
   ];
 
   const closeModal = () => setSelectedIndex(null);
-  const showPrev = () =>
-    setSelectedIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
-  const showNext = () =>
-    setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
+  const showPrev = () => setSelectedIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
+  const showNext = () => setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
 
   return (
     <section id="gallery" className="py-16 bg-gray-100">
@@ -52,35 +50,22 @@ const Gallery = () => {
         ))}
       </div>
 
-      {/* Fullscreen Modal */}
       {selectedIndex !== null && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-          <button
-            onClick={closeModal}
-            className="absolute top-5 right-5 text-white hover:text-red-500 transition"
-          >
+          <button onClick={closeModal} className="absolute top-5 right-5 text-white hover:text-red-500 transition">
             <X size={36} />
           </button>
-
-          <button
-            onClick={showPrev}
-            className="absolute left-5 text-white hover:text-blue-400 transition"
-          >
+          <button onClick={showPrev} className="absolute left-5 text-white hover:text-blue-400 transition">
             <ChevronLeft size={40} />
           </button>
-
-          <div className="bg-white rounded-xl p-4 max-w-[90vw] max-h-[90vh] flex items-center justify-center shadow-2xl">
+          <div className="bg-white rounded-xl p-4 max-w-[90vw] max-h-[90vh] shadow-2xl flex items-center justify-center">
             <img
               src={images[selectedIndex]}
               alt="Enlarged View"
-              className="w-[800px] h-[500px] object-cover rounded-lg"
+              className="max-w-full max-h-[80vh] object-contain rounded-lg"
             />
           </div>
-
-          <button
-            onClick={showNext}
-            className="absolute right-5 text-white hover:text-blue-400 transition"
-          >
+          <button onClick={showNext} className="absolute right-5 text-white hover:text-blue-400 transition">
             <ChevronRight size={40} />
           </button>
         </div>
