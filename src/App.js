@@ -66,7 +66,7 @@ function App() {
       </div>
 
       {/* ✅ Footer always at bottom */}
-      <Footer />
+      <Footer active={visibleSection} onNavigate={handleNavigation} />
     </div>
   );
 }

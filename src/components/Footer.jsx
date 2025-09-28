@@ -1,14 +1,22 @@
 import React from "react";
 import { FaFacebook, FaEnvelope, FaPhone } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = ({ onNavigate, active }) => {
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "education", label: "Education" },
+    { id: "experience", label: "Experience" },
+    { id: "publications", label: "Publications" },
+    { id: "contact", label: "Contact" },
+  ];
+
   return (
     <footer className="bg-gradient-to-r from-river to-sunrise text-white -mt-24">
-      {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 py-6">
         {/* Small screen layout */}
         <div className="block md:hidden space-y-6">
-          {/* Top: Personal Info */}
+          {/* Personal Info */}
           <div>
             <h2 className="text-xl font-bold">Dr. Hamza Khan</h2>
             <p className="mt-1 text-sm leading-snug text-white/90">
@@ -17,18 +25,24 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links + Connect in one row */}
+          {/* Quick Links + Connect */}
           <div className="flex justify-between gap-6">
             {/* Quick Links */}
             <div className="flex-1">
               <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
               <ul className="space-y-1 text-sm text-white/90">
-                <li><a href="#home" className="hover:text-yellow-200 transition">Home</a></li>
-                <li><a href="#about" className="hover:text-yellow-200 transition">About</a></li>
-                <li><a href="#education" className="hover:text-yellow-200 transition">Education</a></li>
-                <li><a href="#experience" className="hover:text-yellow-200 transition">Experience</a></li>
-                <li><a href="#publications" className="hover:text-yellow-200 transition">Publications</a></li>
-                <li><a href="#contact" className="hover:text-yellow-200 transition">Contact</a></li>
+                {navItems.map((item) => (
+                  <li key={item.id}>
+                    <button
+                      onClick={() => onNavigate(item.id)}
+                      className={`hover:text-yellow-200 transition ${
+                        active === item.id ? "font-bold underline" : ""
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -66,7 +80,7 @@ const Footer = () => {
 
         {/* Large screen layout */}
         <div className="hidden md:grid grid-cols-3 gap-6 items-start">
-          {/* Left: Personal Info */}
+          {/* Info */}
           <div>
             <h2 className="text-xl font-bold">Dr. Hamza Khan</h2>
             <p className="mt-1 text-sm leading-snug text-white/90">
@@ -75,20 +89,26 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Center: Quick Links */}
+          {/* Quick Links */}
           <div className="flex flex-col md:items-center">
             <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
             <ul className="space-y-1 text-sm text-white/90">
-              <li><a href="#home" className="hover:text-yellow-200 transition">Home</a></li>
-              <li><a href="#about" className="hover:text-yellow-200 transition">About</a></li>
-              <li><a href="#education" className="hover:text-yellow-200 transition">Education</a></li>
-              <li><a href="#experience" className="hover:text-yellow-200 transition">Experience</a></li>
-              <li><a href="#publications" className="hover:text-yellow-200 transition">Publications</a></li>
-              <li><a href="#contact" className="hover:text-yellow-200 transition">Contact</a></li>
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => onNavigate(item.id)}
+                    className={`hover:text-yellow-200 transition ${
+                      active === item.id ? "font-bold underline" : ""
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Right: Connect */}
+          {/* Connect */}
           <div>
             <h3 className="text-lg font-semibold mb-2">Connect</h3>
             <div className="flex gap-3">
@@ -120,7 +140,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Footer Bar (Always Visible) */}
+      {/* Bottom Bar */}
       <div className="bg-black/20 py-3 text-center text-xs text-white/80">
         © {new Date().getFullYear()} Dr. Hamza Khan | All Rights Reserved
       </div>
