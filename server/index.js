@@ -24,20 +24,21 @@ app.post("/contact", async (req, res) => {
 
   try {
     const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL,      // from .env
-        pass: process.env.PASSWORD,   // from .env
-      },
-    });
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_USER,  // ✅ correct variable
+    pass: process.env.EMAIL_PASS,  // ✅ correct variable
+  },
+});
 
     const mailOptions = {
-      from: process.env.EMAIL,
-      to: process.env.EMAIL, // You can replace this with any receiving email
-      replyTo: email,
-      subject: `📨 New message from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    };
+  from: process.env.EMAIL_USER,
+  to: process.env.EMAIL_RECEIVER, // jahan email receive karni hai
+  replyTo: email,
+  subject: `📧 New message from ${name}`,
+  text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+};
+
 
     await transporter.sendMail(mailOptions);
     console.log("✅ Email sent successfully");
