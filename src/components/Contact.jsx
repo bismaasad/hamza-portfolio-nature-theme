@@ -3,6 +3,9 @@ import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { SiGooglescholar } from "react-icons/si";
 import axios from "axios";
 
+// ✅ Live backend ka URL yahan daalo
+const BASE_URL = "https://hamza-portfolio-backend.vercel.app";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,7 +20,8 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/contact", formData);
+      // ✅ Localhost ki jagah live backend URL use kar rahe hain
+      const res = await axios.post(`${BASE_URL}/contact`, formData);
       alert("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
